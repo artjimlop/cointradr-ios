@@ -15,6 +15,10 @@
 		69BD4384201212E300AA6F95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BD4382201212E300AA6F95 /* LaunchScreen.storyboard */; };
 		69BD438F201212E300AA6F95 /* CoinTraderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD438E201212E300AA6F95 /* CoinTraderTests.swift */; };
 		69CD60572015CC3500B47EB4 /* CoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CD60562015CC3500B47EB4 /* CoinTableViewCell.swift */; };
+		69CD60592015D18400B47EB4 /* CoinsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CD60582015D18400B47EB4 /* CoinsListPresenter.swift */; };
+		69CD605B2015D46000B47EB4 /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CD605A2015D46000B47EB4 /* CoinModel.swift */; };
+		69CD605D2015DD1D00B47EB4 /* CoinsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CD605C2015DD1D00B47EB4 /* CoinsListView.swift */; };
+		69CD605F2016016F00B47EB4 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CD605E2016016F00B47EB4 /* AppDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,10 @@
 		69BD438E201212E300AA6F95 /* CoinTraderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTraderTests.swift; sourceTree = "<group>"; };
 		69BD4390201212E300AA6F95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69CD60562015CC3500B47EB4 /* CoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinTableViewCell.swift; sourceTree = "<group>"; };
+		69CD60582015D18400B47EB4 /* CoinsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListPresenter.swift; sourceTree = "<group>"; };
+		69CD605A2015D46000B47EB4 /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
+		69CD605C2015DD1D00B47EB4 /* CoinsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListView.swift; sourceTree = "<group>"; };
+		69CD605E2016016F00B47EB4 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +89,15 @@
 		69BD4376201212E300AA6F95 /* CoinTrader */ = {
 			isa = PBXGroup;
 			children = (
+				69CD6060201609A300B47EB4 /* Coins */,
 				69BD4377201212E300AA6F95 /* AppDelegate.swift */,
-				69BD4379201212E300AA6F95 /* FirstViewController.swift */,
 				69BD437B201212E300AA6F95 /* SecondViewController.swift */,
 				69BD437D201212E300AA6F95 /* Main.storyboard */,
 				69CD60562015CC3500B47EB4 /* CoinTableViewCell.swift */,
 				69BD4380201212E300AA6F95 /* Assets.xcassets */,
 				69BD4382201212E300AA6F95 /* LaunchScreen.storyboard */,
 				69BD4385201212E300AA6F95 /* Info.plist */,
+				69CD605E2016016F00B47EB4 /* AppDependencies.swift */,
 			);
 			path = CoinTrader;
 			sourceTree = "<group>";
@@ -100,6 +109,17 @@
 				69BD4390201212E300AA6F95 /* Info.plist */,
 			);
 			path = CoinTraderTests;
+			sourceTree = "<group>";
+		};
+		69CD6060201609A300B47EB4 /* Coins */ = {
+			isa = PBXGroup;
+			children = (
+				69BD4379201212E300AA6F95 /* FirstViewController.swift */,
+				69CD60582015D18400B47EB4 /* CoinsListPresenter.swift */,
+				69CD605A2015D46000B47EB4 /* CoinModel.swift */,
+				69CD605C2015DD1D00B47EB4 /* CoinsListView.swift */,
+			);
+			path = Coins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -205,9 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69CD605F2016016F00B47EB4 /* AppDependencies.swift in Sources */,
 				69BD437C201212E300AA6F95 /* SecondViewController.swift in Sources */,
+				69CD60592015D18400B47EB4 /* CoinsListPresenter.swift in Sources */,
 				69BD4378201212E300AA6F95 /* AppDelegate.swift in Sources */,
+				69CD605D2015DD1D00B47EB4 /* CoinsListView.swift in Sources */,
 				69CD60572015CC3500B47EB4 /* CoinTableViewCell.swift in Sources */,
+				69CD605B2015D46000B47EB4 /* CoinModel.swift in Sources */,
 				69BD437A201212E300AA6F95 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
