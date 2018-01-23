@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6998C14A20176DEB006A8314 /* CoinTrader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6998C14820176DEB006A8314 /* CoinTrader.xcdatamodeld */; };
 		69A696D920172672005663E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696D720172661005663E1 /* SwiftyJSON.framework */; };
 		69A696DA20172672005663E1 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696D720172661005663E1 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69A696DB20172672005663E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696C820171F24005663E1 /* Alamofire.framework */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6998C14920176DEB006A8314 /* CoinTrader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinTrader.xcdatamodel; sourceTree = "<group>"; };
 		69A696C820171F24005663E1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		69A696CC2017219F005663E1 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Alamofire; path = Carthage/Build/iOS/Alamofire.framework/Alamofire; sourceTree = "<group>"; };
 		69A696D720172661005663E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		69BD436B201212E300AA6F95 = {
 			isa = PBXGroup;
 			children = (
+				6998C14820176DEB006A8314 /* CoinTrader.xcdatamodeld */,
 				69BD4376201212E300AA6F95 /* CoinTrader */,
 				69BD438D201212E300AA6F95 /* CoinTraderTests */,
 				69BD4375201212E300AA6F95 /* Products */,
@@ -283,6 +286,7 @@
 				69CD60592015D18400B47EB4 /* CoinsListPresenter.swift in Sources */,
 				69BD4378201212E300AA6F95 /* AppDelegate.swift in Sources */,
 				69CD605D2015DD1D00B47EB4 /* CoinsListView.swift in Sources */,
+				6998C14A20176DEB006A8314 /* CoinTrader.xcdatamodeld in Sources */,
 				69CD60572015CC3500B47EB4 /* CoinTableViewCell.swift in Sources */,
 				69CD605B2015D46000B47EB4 /* CoinModel.swift in Sources */,
 				69BD437A201212E300AA6F95 /* CoinsListViewController.swift in Sources */,
@@ -541,6 +545,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6998C14820176DEB006A8314 /* CoinTrader.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6998C14920176DEB006A8314 /* CoinTrader.xcdatamodel */,
+			);
+			currentVersion = 6998C14920176DEB006A8314 /* CoinTrader.xcdatamodel */;
+			path = CoinTrader.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 69BD436C201212E300AA6F95 /* Project object */;
 }
