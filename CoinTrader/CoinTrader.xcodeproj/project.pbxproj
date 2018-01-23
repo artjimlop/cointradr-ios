@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		69A696D4201723D1005663E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696C820171F24005663E1 /* Alamofire.framework */; };
-		69A696D5201723D1005663E1 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696C820171F24005663E1 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		69A696D920172672005663E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696D720172661005663E1 /* SwiftyJSON.framework */; };
+		69A696DA20172672005663E1 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696D720172661005663E1 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		69A696DB20172672005663E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696C820171F24005663E1 /* Alamofire.framework */; };
+		69A696DC20172672005663E1 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696C820171F24005663E1 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69BD4378201212E300AA6F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4377201212E300AA6F95 /* AppDelegate.swift */; };
 		69BD437A201212E300AA6F95 /* CoinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4379201212E300AA6F95 /* CoinsListViewController.swift */; };
 		69BD437C201212E300AA6F95 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD437B201212E300AA6F95 /* SecondViewController.swift */; };
@@ -34,13 +36,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		69A696D6201723D1005663E1 /* Embed Frameworks */ = {
+		69A696DD20172673005663E1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				69A696D5201723D1005663E1 /* Alamofire.framework in Embed Frameworks */,
+				69A696DA20172672005663E1 /* SwiftyJSON.framework in Embed Frameworks */,
+				69A696DC20172672005663E1 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,6 +53,7 @@
 /* Begin PBXFileReference section */
 		69A696C820171F24005663E1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		69A696CC2017219F005663E1 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Alamofire; path = Carthage/Build/iOS/Alamofire.framework/Alamofire; sourceTree = "<group>"; };
+		69A696D720172661005663E1 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		69BD4374201212E300AA6F95 /* CoinTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BD4377201212E300AA6F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BD4379201212E300AA6F95 /* CoinsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69A696D4201723D1005663E1 /* Alamofire.framework in Frameworks */,
+				69A696D920172672005663E1 /* SwiftyJSON.framework in Frameworks */,
+				69A696DB20172672005663E1 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +95,7 @@
 		69A696C720171F23005663E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				69A696D720172661005663E1 /* SwiftyJSON.framework */,
 				69A696CC2017219F005663E1 /* Alamofire */,
 				69A696C820171F24005663E1 /* Alamofire.framework */,
 			);
@@ -162,7 +168,7 @@
 				69BD4371201212E300AA6F95 /* Frameworks */,
 				69BD4372201212E300AA6F95 /* Resources */,
 				69A696CA20171F54005663E1 /* ShellScript */,
-				69A696D6201723D1005663E1 /* Embed Frameworks */,
+				69A696DD20172673005663E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

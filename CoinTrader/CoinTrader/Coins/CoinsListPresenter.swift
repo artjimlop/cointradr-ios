@@ -8,9 +8,11 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 class CoinsListPresenter {
     private var view : CoinsListView?
+    private var coins = [CoinModel]()
     
     init() {
         
@@ -18,35 +20,41 @@ class CoinsListPresenter {
     
     func initialize(view: CoinsListView) {
         self.view = view
-        let coin = CoinModel(id : "BTC",
-                             name : "Bitcoin",
-                             symbol : "BTC",
-                             rank : 1,
-                             priceUSD : 1000.0,
-                             priceBTC : 1.0,
-                             dayVolumeUSD : 10.0,
-                             marketCapUSD : 100.0,
-                             availableSupply : 1000.0,
-                             totalSupply : 1.0,
-                             percentChangeHour : 1.0,
-                             percentChangeDay : 1.0,
-                             percentChangeWeek : 1.9,
-                             lastUpdated : 1)
-        let coins = [coin]
-        self.view!.showCoins(coins: coins)
-        
+        self.loadCoins()
+    }
+    
+    private func loadCoins() {
         Alamofire.request("https://api.coinmarketcap.com/v1/ticker").responseJSON { response in
-            print("Request: \(String(describing: response.request))")   // original url request
-            print("Response: \(String(describing: response.response))") // http url response
-            print("Result: \(response.result)")                         // response serialization result
-            
-            if let json = response.result.value {
-                print("JSON: \(json)") // serialized json response
+            if let data = response.data, let _ = String(data: data, encoding: .utf8) {
+                if let jsonResponse = try? JSON(data: data) {
+                    self.mapCoinsResponse(jsonResponse: jsonResponse)
+                    self.view!.showCoins(coins: self.coins)
+                }
             }
-            
-            if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-                print("Data: \(utf8Text)") // original server data as UTF8 string
-            }
+        }
+    }
+    
+    private func parseCoinModel(item: JSON) -> CoinModel {
+        return CoinModel(id : item["id"].stringValue,
+                             name : item["name"].stringValue,
+                             symbol : item["symbol"].stringValue,
+                             rank : item["rank"].intValue,
+                             priceUSD : item["price_usd"].doubleValue,
+                             priceBTC : item["price_btc"].doubleValue,
+                             dayVolumeUSD : item["24h_volume_usd"].doubleValue,
+                             marketCapUSD : item["market_cap_usd"].doubleValue,
+                             availableSupply : item["available_supply"].doubleValue,
+                             totalSupply : item["total_supply"].doubleValue,
+                             percentChangeHour : item["percent_change_1h"].doubleValue,
+                             percentChangeDay : item["percent_change_24h"].doubleValue,
+                             percentChangeWeek : item["percent_change_7d"].doubleValue,
+                             lastUpdated : item["last_updated"].intValue)
+    }
+    
+    private func mapCoinsResponse(jsonResponse: JSON) {
+        for item in jsonResponse[].arrayValue {
+            print(item["id"].stringValue)
+            self.coins.append(self.parseCoinModel(item: item))
         }
     }
 }

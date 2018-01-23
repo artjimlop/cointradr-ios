@@ -36,8 +36,8 @@ class CoinsListViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let coinCell = coinsView.dequeueReusableCell(withIdentifier: "coinCell") as! CoinTableViewCell
         coinCell.title.text = coins[indexPath.row].name
-        coinCell.subtitle.text = coins[indexPath.row].name
-        coinCell.change.text = "\(coins[indexPath.row].name)"
+        coinCell.subtitle.text = "$\(coins[indexPath.row].priceUSD)"
+        coinCell.change.text = "\(coins[indexPath.row].percentChangeDay)%"
         return coinCell
     }
     
