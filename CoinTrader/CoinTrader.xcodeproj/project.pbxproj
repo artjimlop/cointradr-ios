@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		69A696D4201723D1005663E1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696C820171F24005663E1 /* Alamofire.framework */; };
+		69A696D5201723D1005663E1 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696C820171F24005663E1 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69BD4378201212E300AA6F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4377201212E300AA6F95 /* AppDelegate.swift */; };
 		69BD437A201212E300AA6F95 /* CoinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4379201212E300AA6F95 /* CoinsListViewController.swift */; };
 		69BD437C201212E300AA6F95 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD437B201212E300AA6F95 /* SecondViewController.swift */; };
@@ -31,7 +33,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		69A696D6201723D1005663E1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				69A696D5201723D1005663E1 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		69A696C820171F24005663E1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		69A696CC2017219F005663E1 /* Alamofire */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Alamofire; path = Carthage/Build/iOS/Alamofire.framework/Alamofire; sourceTree = "<group>"; };
 		69BD4374201212E300AA6F95 /* CoinTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BD4377201212E300AA6F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BD4379201212E300AA6F95 /* CoinsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A696D4201723D1005663E1 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		69A696C720171F23005663E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69A696CC2017219F005663E1 /* Alamofire */,
+				69A696C820171F24005663E1 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69BD436B201212E300AA6F95 = {
 			isa = PBXGroup;
 			children = (
 				69BD4376201212E300AA6F95 /* CoinTrader */,
 				69BD438D201212E300AA6F95 /* CoinTraderTests */,
 				69BD4375201212E300AA6F95 /* Products */,
+				69A696C720171F23005663E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +161,8 @@
 				69BD4370201212E300AA6F95 /* Sources */,
 				69BD4371201212E300AA6F95 /* Frameworks */,
 				69BD4372201212E300AA6F95 /* Resources */,
+				69A696CA20171F54005663E1 /* ShellScript */,
+				69A696D6201723D1005663E1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -219,6 +250,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69A696CA20171F54005663E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69BD4370201212E300AA6F95 /* Sources */ = {
@@ -386,8 +433,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoinTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Alamofire.framework",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenzoku.CoinTrader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -400,8 +455,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CoinTrader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS/Alamofire.framework",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.kenzoku.CoinTrader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

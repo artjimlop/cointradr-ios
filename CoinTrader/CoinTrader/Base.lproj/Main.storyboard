@@ -62,14 +62,20 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="eBr-ZP-yCa" firstAttribute="top" secondItem="N1a-GL-su9" secondAttribute="bottom" constant="1" id="2Zi-SJ-OXa"/>
                                                 <constraint firstItem="EGM-HC-vEP" firstAttribute="top" secondItem="KWO-zV-xGE" secondAttribute="top" id="Bif-DW-kqd"/>
+                                                <constraint firstAttribute="bottom" secondItem="EGM-HC-vEP" secondAttribute="bottom" constant="22.5" id="Bmr-YJ-4c7"/>
                                                 <constraint firstItem="N1a-GL-su9" firstAttribute="leading" secondItem="KWO-zV-xGE" secondAttribute="leading" constant="15" id="Fb9-qp-3Hp"/>
                                                 <constraint firstItem="eBr-ZP-yCa" firstAttribute="top" secondItem="N1a-GL-su9" secondAttribute="bottom" constant="1" id="J0o-ad-Q6z"/>
                                                 <constraint firstItem="eBr-ZP-yCa" firstAttribute="top" secondItem="N1a-GL-su9" secondAttribute="bottom" constant="1" id="MhJ-f8-vYg"/>
+                                                <constraint firstAttribute="trailing" secondItem="EGM-HC-vEP" secondAttribute="trailing" constant="15" id="QxG-ZH-ahQ"/>
                                                 <constraint firstItem="eBr-ZP-yCa" firstAttribute="leading" secondItem="KWO-zV-xGE" secondAttribute="leading" constant="15" id="XRy-s2-hzk"/>
+                                                <constraint firstItem="N1a-GL-su9" firstAttribute="leading" secondItem="KWO-zV-xGE" secondAttribute="leading" constant="15" id="Xnt-BX-HXE"/>
                                                 <constraint firstAttribute="trailing" secondItem="EGM-HC-vEP" secondAttribute="trailing" constant="15" id="ZRs-W1-V6o"/>
                                                 <constraint firstAttribute="bottom" secondItem="eBr-ZP-yCa" secondAttribute="bottom" id="dkU-tl-9qv"/>
+                                                <constraint firstItem="N1a-GL-su9" firstAttribute="top" secondItem="KWO-zV-xGE" secondAttribute="top" id="ekC-gx-A5O"/>
                                                 <constraint firstItem="N1a-GL-su9" firstAttribute="top" secondItem="KWO-zV-xGE" secondAttribute="top" id="kwM-GZ-BDr"/>
+                                                <constraint firstItem="EGM-HC-vEP" firstAttribute="top" secondItem="KWO-zV-xGE" secondAttribute="top" id="m4n-Xn-X1y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
