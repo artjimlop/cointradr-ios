@@ -16,12 +16,6 @@ class FirstViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var coinsView: UITableView!
     
-    init() {
-        appDependencies = AppDependencies()
-        self.presenter = appDependencies.coinsListPresenter
-        super.init(nibName: nil, bundle: nil)
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         appDependencies = AppDependencies()
         self.presenter = appDependencies.coinsListPresenter
