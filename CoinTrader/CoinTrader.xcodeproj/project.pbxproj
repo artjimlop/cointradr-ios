@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69BD4378201212E300AA6F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4377201212E300AA6F95 /* AppDelegate.swift */; };
-		69BD437A201212E300AA6F95 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4379201212E300AA6F95 /* FirstViewController.swift */; };
+		69BD437A201212E300AA6F95 /* CoinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4379201212E300AA6F95 /* CoinsListViewController.swift */; };
 		69BD437C201212E300AA6F95 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD437B201212E300AA6F95 /* SecondViewController.swift */; };
 		69BD437F201212E300AA6F95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BD437D201212E300AA6F95 /* Main.storyboard */; };
 		69BD4381201212E300AA6F95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BD4380201212E300AA6F95 /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 /* Begin PBXFileReference section */
 		69BD4374201212E300AA6F95 /* CoinTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BD4377201212E300AA6F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69BD4379201212E300AA6F95 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		69BD4379201212E300AA6F95 /* CoinsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListViewController.swift; sourceTree = "<group>"; };
 		69BD437B201212E300AA6F95 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		69BD437E201212E300AA6F95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69BD4380201212E300AA6F95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		69CD6060201609A300B47EB4 /* Coins */ = {
 			isa = PBXGroup;
 			children = (
-				69BD4379201212E300AA6F95 /* FirstViewController.swift */,
+				69BD4379201212E300AA6F95 /* CoinsListViewController.swift */,
 				69CD60582015D18400B47EB4 /* CoinsListPresenter.swift */,
 				69CD605A2015D46000B47EB4 /* CoinModel.swift */,
 				69CD605C2015DD1D00B47EB4 /* CoinsListView.swift */,
@@ -232,7 +232,7 @@
 				69CD605D2015DD1D00B47EB4 /* CoinsListView.swift in Sources */,
 				69CD60572015CC3500B47EB4 /* CoinTableViewCell.swift in Sources */,
 				69CD605B2015D46000B47EB4 /* CoinModel.swift in Sources */,
-				69BD437A201212E300AA6F95 /* FirstViewController.swift in Sources */,
+				69BD437A201212E300AA6F95 /* CoinsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

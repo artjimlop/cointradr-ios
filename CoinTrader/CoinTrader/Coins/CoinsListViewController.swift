@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CoinsListView {
+class CoinsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CoinsListView {
     
     private var appDependencies: AppDependencies
     private var presenter: CoinsListPresenter
