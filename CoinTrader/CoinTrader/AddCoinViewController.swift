@@ -1,22 +1,21 @@
 //
-//  SecondViewController.swift
+//  AddCoinViewController.swift
 //  CoinTrader
 //
-//  Created by Arturo on 19/1/18.
+//  Created by Arturo on 24/1/18.
 //  Copyright © 2018 Kenkozu. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class SecondViewController: UIViewController {
-
+class AddCoinViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
-
