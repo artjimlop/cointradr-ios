@@ -45,4 +45,17 @@ class CoinsListViewController: UIViewController, UITableViewDataSource, UITableV
         self.coins = coins
         self.coinsView.reloadData()
     }
+    
+    func saveCurrencies(currencies: [CurrencyModel]) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        for currency in currencies {
+            let currencyIdentifier = CurrencyIdentifier(context: context)
+            currencyIdentifier.id = currency.id
+            currencyIdentifier.name = currency.name
+            currencyIdentifier.symbol = currency.symbol
+            currencyIdentifier.priceUSD = currency.priceUSD
+            currencyIdentifier.priceBTC = currency.priceBTC
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }
+    }
 }

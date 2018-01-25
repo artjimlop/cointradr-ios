@@ -10,4 +10,5 @@ import Foundation
 
 protocol CoinsListView {
     func showCoins(coins: [CoinModel])
+    func saveCurrencies(currencies: [CurrencyModel])
 }

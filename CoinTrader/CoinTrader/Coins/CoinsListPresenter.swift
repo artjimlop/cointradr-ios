@@ -13,6 +13,7 @@ import SwiftyJSON
 class CoinsListPresenter {
     private var view : CoinsListView?
     private var coins = [CoinModel]()
+    private var currencies = [CurrencyModel]()
     
     init() {
         
@@ -29,12 +30,19 @@ class CoinsListPresenter {
                 if let jsonResponse = try? JSON(data: data) {
                     self.mapCoinsResponse(jsonResponse: jsonResponse)
                     self.view!.showCoins(coins: self.coins)
+                    self.view!.saveCurrencies(currencies: self.currencies)
                 }
             }
         }
     }
     
     private func parseCoinModel(item: JSON) -> CoinModel {
+        currencies.append(CurrencyModel(id : item["id"].stringValue,
+                                        name : item["name"].stringValue,
+                                        symbol : item["symbol"].stringValue,
+                                        priceUSD : item["price_usd"].doubleValue,
+                                        priceBTC : item["price_btc"].doubleValue))
+        
         return CoinModel(id : item["id"].stringValue,
                              name : item["name"].stringValue,
                              symbol : item["symbol"].stringValue,
