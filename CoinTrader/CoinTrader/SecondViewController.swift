@@ -37,8 +37,12 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let coinCell = purchasedCoinsView.dequeueReusableCell(withIdentifier: "purchasedCoinCell") as UITableViewCell!
         coinCell?.textLabel?.text = currencies[indexPath.row].name
-        coinCell?.detailTextLabel?.text = String(currencies[indexPath.row].purchasedPrice)
+        coinCell?.detailTextLabel?.text = String(getDifference(currency: currencies[indexPath.row]))
         return coinCell!
+    }
+    
+    func getDifference(currency: Currency) -> Double {
+        return (currency.lastKnownPrice - currency.purchasedPrice) * currency.quantity
     }
 }
 

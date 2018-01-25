@@ -48,6 +48,12 @@ class CoinsListViewController: UIViewController, UITableViewDataSource, UITableV
     
     func saveCurrencies(currencies: [CurrencyModel]) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        var purchasedCurrencies = [Currency]()
+        do {
+            purchasedCurrencies = try context.fetch(Currency.fetchRequest())
+        } catch {
+            print("Fetching Failed")
+        }
         for currency in currencies {
             let currencyIdentifier = CurrencyIdentifier(context: context)
             currencyIdentifier.id = currency.id
@@ -56,6 +62,13 @@ class CoinsListViewController: UIViewController, UITableViewDataSource, UITableV
             currencyIdentifier.priceUSD = currency.priceUSD
             currencyIdentifier.priceBTC = currency.priceBTC
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            
+            for purchasedCurrency in purchasedCurrencies {
+                if (purchasedCurrency.symbol == currency.symbol) {
+                    purchasedCurrency.lastKnownPrice = currency.priceUSD
+                    (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                }
+            }
         }
     }
 }
