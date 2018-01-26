@@ -16,11 +16,15 @@ class PurchasedCurrenciesViewController: UIViewController, UITableViewDataSource
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        purchasedCoinsView.delegate = self
-        purchasedCoinsView.dataSource = self
         self.appDependencies = AppDependencies(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let coinDataHandler = appDependencies?.coinDataHandler
         self.currencies = (coinDataHandler?.getDataCurrencies())!
+        purchasedCoinsView.delegate = self
+        purchasedCoinsView.dataSource = self
+        self.purchasedCoinsView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
