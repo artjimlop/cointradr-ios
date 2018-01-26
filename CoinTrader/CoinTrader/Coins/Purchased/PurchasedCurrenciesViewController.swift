@@ -36,14 +36,24 @@ class PurchasedCurrenciesViewController: UIViewController, UITableViewDataSource
         coinCell?.coinName.text = currencies[indexPath.row].name
         coinCell?.currentPrice.text = "$\(currencies[indexPath.row].lastKnownPrice)"
         coinCell?.purchasedPrice.text = "You paid \(currencies[indexPath.row].purchasedPrice) each"
+        
         coinCell?.totalMoney.text = "$\(getDifference(currency: currencies[indexPath.row]))"
-        coinCell?.changePercentage.text = getChange(currency: currencies[indexPath.row])
+        coinCell?.changePercentage.text = "\(getChange(currency: currencies[indexPath.row]))%"
+        
+        if(getChange(currency: currencies[indexPath.row]) < 0.0) {
+            coinCell?.totalMoney.textColor = UIColor.red
+            coinCell?.changePercentage.textColor = UIColor.red
+        } else {
+            coinCell?.totalMoney.textColor = UIColor.green
+            coinCell?.changePercentage.textColor = UIColor.green
+        }
         return coinCell!
     }
     
-    func getChange(currency: Currency) -> String {
-        let percentage = (currency.purchasedPrice * 100) / currency.lastKnownPrice
-        return "\(percentage.truncate(places: 2))%"
+    func getChange(currency: Currency) -> Double {
+        let diff = (currency.lastKnownPrice - currency.purchasedPrice)
+        let change = ((diff * 100)/currency.purchasedPrice)
+        return change.truncate(places: 2)
     }
     
     func getDifference(currency: Currency) -> Double {
