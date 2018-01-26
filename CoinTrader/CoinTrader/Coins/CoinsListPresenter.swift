@@ -14,9 +14,10 @@ class CoinsListPresenter {
     private var view : CoinsListView?
     private var coins = [CoinModel]()
     private var currencies = [CurrencyModel]()
+    private var coinDataHandler: CoinDataHandler
     
-    init() {
-        
+    init(coinDataHandler: CoinDataHandler) {
+        self.coinDataHandler = coinDataHandler
     }
     
     func initialize(view: CoinsListView) {
@@ -30,7 +31,7 @@ class CoinsListPresenter {
                 if let jsonResponse = try? JSON(data: data) {
                     self.mapCoinsResponse(jsonResponse: jsonResponse)
                     self.view!.showCoins(coins: self.coins)
-                    self.view!.saveCurrencies(currencies: self.currencies)
+                    self.coinDataHandler.saveCurrencies(currencies: self.currencies)
                 }
             }
         }

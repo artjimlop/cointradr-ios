@@ -11,8 +11,10 @@ import Foundation
 class AppDependencies {
     
     let coinsListPresenter: CoinsListPresenter
+    let coinDataHandler: CoinDataHandler
     
-    init() {
-        coinsListPresenter = CoinsListPresenter()
+    init(appDelegate: AppDelegate) {
+        coinDataHandler = CoinDataHandler(appDelegate: appDelegate)
+        coinsListPresenter = CoinsListPresenter(coinDataHandler: coinDataHandler)
     }
 }

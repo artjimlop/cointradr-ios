@@ -12,22 +12,14 @@ class SecondViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var purchasedCoinsView: UITableView!
     var currencies = [Currency]()
+    let appDependencies = AppDependencies(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         purchasedCoinsView.delegate = self
         purchasedCoinsView.dataSource = self
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        do {
-            self.currencies = try context.fetch(Currency.fetchRequest())
-        } catch {
-            print("Fetching Failed")
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        let coinDataHandler = appDependencies.coinDataHandler
+        self.currencies = coinDataHandler.getDataCurrencies()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

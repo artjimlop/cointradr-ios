@@ -17,7 +17,7 @@ class CoinsListViewController: UIViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var coinsView: UITableView!
     
     required init?(coder aDecoder: NSCoder) {
-        appDependencies = AppDependencies()
+        appDependencies = AppDependencies(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
         self.presenter = appDependencies.coinsListPresenter
         super.init(coder: aDecoder)
     }
@@ -44,31 +44,5 @@ class CoinsListViewController: UIViewController, UITableViewDataSource, UITableV
     func showCoins(coins: [CoinModel]) {
         self.coins = coins
         self.coinsView.reloadData()
-    }
-    
-    func saveCurrencies(currencies: [CurrencyModel]) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        var purchasedCurrencies = [Currency]()
-        do {
-            purchasedCurrencies = try context.fetch(Currency.fetchRequest())
-        } catch {
-            print("Fetching Failed")
-        }
-        for currency in currencies {
-            let currencyIdentifier = CurrencyIdentifier(context: context)
-            currencyIdentifier.id = currency.id
-            currencyIdentifier.name = currency.name
-            currencyIdentifier.symbol = currency.symbol
-            currencyIdentifier.priceUSD = currency.priceUSD
-            currencyIdentifier.priceBTC = currency.priceBTC
-            (UIApplication.shared.delegate as! AppDelegate).saveContext()
-            
-            for purchasedCurrency in purchasedCurrencies {
-                if (purchasedCurrency.symbol == currency.symbol) {
-                    purchasedCurrency.lastKnownPrice = currency.priceUSD
-                    (UIApplication.shared.delegate as! AppDelegate).saveContext()
-                }
-            }
-        }
     }
 }

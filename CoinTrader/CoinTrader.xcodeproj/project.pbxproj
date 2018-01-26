@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		697BDBB0201B183C0024D1C3 /* CoinDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697BDBAF201B183C0024D1C3 /* CoinDataHandler.swift */; };
 		697CC9E92018717B00AD5042 /* AddCoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697CC9E82018717B00AD5042 /* AddCoinViewController.swift */; };
 		6998C14A20176DEB006A8314 /* CoinTrader.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6998C14820176DEB006A8314 /* CoinTrader.xcdatamodeld */; };
 		69A696D920172672005663E1 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696D720172661005663E1 /* SwiftyJSON.framework */; };
@@ -54,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		697BDBAF201B183C0024D1C3 /* CoinDataHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDataHandler.swift; sourceTree = "<group>"; };
 		697CC9E82018717B00AD5042 /* AddCoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCoinViewController.swift; sourceTree = "<group>"; };
 		6998C14920176DEB006A8314 /* CoinTrader.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinTrader.xcdatamodel; sourceTree = "<group>"; };
 		69A696C820171F24005663E1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				69BD4385201212E300AA6F95 /* Info.plist */,
 				69CD605E2016016F00B47EB4 /* AppDependencies.swift */,
 				697CC9E82018717B00AD5042 /* AddCoinViewController.swift */,
+				697BDBAF201B183C0024D1C3 /* CoinDataHandler.swift */,
 			);
 			path = CoinTrader;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				6998C14A20176DEB006A8314 /* CoinTrader.xcdatamodeld in Sources */,
 				69DFF47C2019DC370004900D /* CurrencyModel.swift in Sources */,
 				69CD60572015CC3500B47EB4 /* CoinTableViewCell.swift in Sources */,
+				697BDBB0201B183C0024D1C3 /* CoinDataHandler.swift in Sources */,
 				69CD605B2015D46000B47EB4 /* CoinModel.swift in Sources */,
 				69BD437A201212E300AA6F95 /* CoinsListViewController.swift in Sources */,
 			);

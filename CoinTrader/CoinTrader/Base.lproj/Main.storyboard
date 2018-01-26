@@ -230,7 +230,7 @@
                         <viewLayoutGuide key="safeArea" id="5gh-c9-6WA"/>
                     </view>
                     <connections>
-                        <outlet property="amountText" destination="qf9-gJ-3Ds" id="LBf-n1-B4U"/>
+                        <outlet property="amountText" destination="qf9-gJ-3Ds" id="34E-CS-HsP"/>
                         <outlet property="coinPicker" destination="pVP-zZ-yAa" id="uOf-Ho-591"/>
                         <outlet property="priceText" destination="ebc-Kh-rQa" id="0GC-dY-6A8"/>
                     </connections>

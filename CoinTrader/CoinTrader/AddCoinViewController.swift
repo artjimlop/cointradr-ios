@@ -16,17 +16,37 @@ class AddCoinViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var coinPicker: UIPickerView!
     
     var currencies = [CurrencyIdentifier]()
+    private var appDependencies: AppDependencies?
+    private var coinDataHandler: CoinDataHandler?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        initalizeDependencies()
+        initializeDelegates()
+        loadCurrencies()
+    }
+    
+    private func initalizeDependencies() {
+        self.appDependencies = AppDependencies(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
+        self.coinDataHandler = appDependencies?.coinDataHandler
+    }
+    
+    private func initializeDelegates() {
+        self.amountText.delegate = self
+        self.priceText.delegate = self
+    }
+    
+    private func loadCurrencies() {
+        self.currencies = (coinDataHandler?.getCurrencies())!
+    }
     
     @IBAction func onAddCoinPress(_ sender: UIButton) {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let currency = Currency(context: context)
+        addCoin()
+    }
+    
+    private func addCoin() {
         let selectedCurrency = currencies[coinPicker.selectedRow(inComponent: 0)]
-        currency.quantity = Double(amountText.text!)!
-        currency.purchasedPrice = Double(priceText.text!)!
-        currency.name = selectedCurrency.name
-        currency.lastKnownPrice = selectedCurrency.priceUSD
-        currency.symbol = selectedCurrency.symbol
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        coinDataHandler?.addCurrency(selectedCurrency: selectedCurrency, quantity: Double(amountText.text!)!, purchasedPrice: Double(priceText.text!)!)
         _ = navigationController?.popViewController(animated: true)
     }
     
@@ -45,21 +65,4 @@ class AddCoinViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return CharacterSet.decimalDigits.isSuperset(of: CharacterSet(charactersIn: string))
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.amountText.delegate = self
-        self.priceText.delegate = self
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        do {
-            self.currencies = try context.fetch(CurrencyIdentifier.fetchRequest())
-        } catch {
-            print("Fetching Failed")
-        }
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }
