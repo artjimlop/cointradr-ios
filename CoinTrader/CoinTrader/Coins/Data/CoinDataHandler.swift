@@ -63,14 +63,13 @@ class CoinDataHandler {
             currencyIdentifier.symbol = currency.symbol
             currencyIdentifier.priceUSD = currency.priceUSD
             currencyIdentifier.priceBTC = currency.priceBTC
-            appDelegate.saveContext()
             
             for purchasedCurrency in purchasedCurrencies {
                 if (purchasedCurrency.symbol == currency.symbol) {
                     purchasedCurrency.lastKnownPrice = currency.priceUSD
-                    appDelegate.saveContext()
                 }
             }
+            appDelegate.saveContext()
         }
     }
 }

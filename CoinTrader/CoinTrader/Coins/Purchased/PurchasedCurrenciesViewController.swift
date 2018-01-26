@@ -8,18 +8,19 @@
 
 import UIKit
 
-class SecondViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PurchasedCurrenciesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var purchasedCoinsView: UITableView!
     var currencies = [Currency]()
-    let appDependencies = AppDependencies(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
+    var appDependencies: AppDependencies?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         purchasedCoinsView.delegate = self
         purchasedCoinsView.dataSource = self
-        let coinDataHandler = appDependencies.coinDataHandler
-        self.currencies = coinDataHandler.getDataCurrencies()
+        self.appDependencies = AppDependencies(appDelegate: (UIApplication.shared.delegate as! AppDelegate))
+        let coinDataHandler = appDependencies?.coinDataHandler
+        self.currencies = (coinDataHandler?.getDataCurrencies())!
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

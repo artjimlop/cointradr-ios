@@ -16,7 +16,7 @@
 		69A696DC20172672005663E1 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69A696C820171F24005663E1 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69BD4378201212E300AA6F95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4377201212E300AA6F95 /* AppDelegate.swift */; };
 		69BD437A201212E300AA6F95 /* CoinsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD4379201212E300AA6F95 /* CoinsListViewController.swift */; };
-		69BD437C201212E300AA6F95 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD437B201212E300AA6F95 /* SecondViewController.swift */; };
+		69BD437C201212E300AA6F95 /* PurchasedCurrenciesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BD437B201212E300AA6F95 /* PurchasedCurrenciesViewController.swift */; };
 		69BD437F201212E300AA6F95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BD437D201212E300AA6F95 /* Main.storyboard */; };
 		69BD4381201212E300AA6F95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69BD4380201212E300AA6F95 /* Assets.xcassets */; };
 		69BD4384201212E300AA6F95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69BD4382201212E300AA6F95 /* LaunchScreen.storyboard */; };
@@ -64,7 +64,7 @@
 		69BD4374201212E300AA6F95 /* CoinTrader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinTrader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69BD4377201212E300AA6F95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69BD4379201212E300AA6F95 /* CoinsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListViewController.swift; sourceTree = "<group>"; };
-		69BD437B201212E300AA6F95 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		69BD437B201212E300AA6F95 /* PurchasedCurrenciesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchasedCurrenciesViewController.swift; sourceTree = "<group>"; };
 		69BD437E201212E300AA6F95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69BD4380201212E300AA6F95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69BD4383201212E300AA6F95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -100,6 +100,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		697BDBB1201B1E5C0024D1C3 /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				697CC9E82018717B00AD5042 /* AddCoinViewController.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		697BDBB2201B1E7C0024D1C3 /* Purchased */ = {
+			isa = PBXGroup;
+			children = (
+				69BD437B201212E300AA6F95 /* PurchasedCurrenciesViewController.swift */,
+			);
+			path = Purchased;
+			sourceTree = "<group>";
+		};
+		697BDBB3201B1E910024D1C3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				69CD60562015CC3500B47EB4 /* CoinTableViewCell.swift */,
+				69BD4379201212E300AA6F95 /* CoinsListViewController.swift */,
+				69CD60582015D18400B47EB4 /* CoinsListPresenter.swift */,
+				69CD605A2015D46000B47EB4 /* CoinModel.swift */,
+				69CD605C2015DD1D00B47EB4 /* CoinsListView.swift */,
+				69DFF47B2019DC370004900D /* CurrencyModel.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		697BDBB4201B1EB30024D1C3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				697BDBAF201B183C0024D1C3 /* CoinDataHandler.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		69A696C720171F23005663E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,15 +172,11 @@
 			children = (
 				69CD6060201609A300B47EB4 /* Coins */,
 				69BD4377201212E300AA6F95 /* AppDelegate.swift */,
-				69BD437B201212E300AA6F95 /* SecondViewController.swift */,
 				69BD437D201212E300AA6F95 /* Main.storyboard */,
-				69CD60562015CC3500B47EB4 /* CoinTableViewCell.swift */,
 				69BD4380201212E300AA6F95 /* Assets.xcassets */,
 				69BD4382201212E300AA6F95 /* LaunchScreen.storyboard */,
 				69BD4385201212E300AA6F95 /* Info.plist */,
 				69CD605E2016016F00B47EB4 /* AppDependencies.swift */,
-				697CC9E82018717B00AD5042 /* AddCoinViewController.swift */,
-				697BDBAF201B183C0024D1C3 /* CoinDataHandler.swift */,
 			);
 			path = CoinTrader;
 			sourceTree = "<group>";
@@ -160,11 +193,10 @@
 		69CD6060201609A300B47EB4 /* Coins */ = {
 			isa = PBXGroup;
 			children = (
-				69BD4379201212E300AA6F95 /* CoinsListViewController.swift */,
-				69CD60582015D18400B47EB4 /* CoinsListPresenter.swift */,
-				69CD605A2015D46000B47EB4 /* CoinModel.swift */,
-				69CD605C2015DD1D00B47EB4 /* CoinsListView.swift */,
-				69DFF47B2019DC370004900D /* CurrencyModel.swift */,
+				697BDBB4201B1EB30024D1C3 /* Data */,
+				697BDBB3201B1E910024D1C3 /* List */,
+				697BDBB2201B1E7C0024D1C3 /* Purchased */,
+				697BDBB1201B1E5C0024D1C3 /* Add */,
 			);
 			path = Coins;
 			sourceTree = "<group>";
@@ -292,7 +324,7 @@
 			files = (
 				69CD605F2016016F00B47EB4 /* AppDependencies.swift in Sources */,
 				697CC9E92018717B00AD5042 /* AddCoinViewController.swift in Sources */,
-				69BD437C201212E300AA6F95 /* SecondViewController.swift in Sources */,
+				69BD437C201212E300AA6F95 /* PurchasedCurrenciesViewController.swift in Sources */,
 				69CD60592015D18400B47EB4 /* CoinsListPresenter.swift in Sources */,
 				69BD4378201212E300AA6F95 /* AppDelegate.swift in Sources */,
 				69CD605D2015DD1D00B47EB4 /* CoinsListView.swift in Sources */,
