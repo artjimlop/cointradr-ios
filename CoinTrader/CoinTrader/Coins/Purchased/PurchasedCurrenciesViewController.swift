@@ -32,14 +32,30 @@ class PurchasedCurrenciesViewController: UIViewController, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let coinCell = purchasedCoinsView.dequeueReusableCell(withIdentifier: "purchasedCoinCell") as UITableViewCell!
-        coinCell?.textLabel?.text = currencies[indexPath.row].name
-        coinCell?.detailTextLabel?.text = String(getDifference(currency: currencies[indexPath.row]))
+        let coinCell = purchasedCoinsView.dequeueReusableCell(withIdentifier: "purchasedCoinCell") as! PurchasedCoinTableViewCell!
+        coinCell?.coinName.text = currencies[indexPath.row].name
+        coinCell?.currentPrice.text = "$\(currencies[indexPath.row].lastKnownPrice)"
+        coinCell?.purchasedPrice.text = "You paid \(currencies[indexPath.row].purchasedPrice) each"
+        coinCell?.totalMoney.text = "$\(getDifference(currency: currencies[indexPath.row]))"
+        coinCell?.changePercentage.text = getChange(currency: currencies[indexPath.row])
         return coinCell!
     }
     
+    func getChange(currency: Currency) -> String {
+        let percentage = (currency.purchasedPrice * 100) / currency.lastKnownPrice
+        return "\(percentage.truncate(places: 2))%"
+    }
+    
     func getDifference(currency: Currency) -> Double {
-        return (currency.lastKnownPrice - currency.purchasedPrice) * currency.quantity
+        let diff = (currency.lastKnownPrice - currency.purchasedPrice) * currency.quantity
+        return diff.truncate(places: 2)
     }
 }
 
+extension Double
+{
+    func truncate(places : Int)-> Double
+    {
+        return Double(floor(pow(10.0, Double(places)) * self)/pow(10.0, Double(places)))
+    }
+}
